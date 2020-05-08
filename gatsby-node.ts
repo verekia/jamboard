@@ -14,7 +14,7 @@ export const createPages = async ({ actions, graphql }) => {
     const slug = topic.id
     actions.createPage({
       path: `/topic/${slug}`,
-      component: require.resolve('./src/pages/TopicPage.tsx'),
+      component: require.resolve('./src/components/TopicPage.tsx'),
       context: { slug },
     })
   })
