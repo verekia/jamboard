@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 const IndexPage = ({ data }) => (
   <div>
@@ -8,7 +8,9 @@ const IndexPage = ({ data }) => (
     <h2>Topics</h2>
     <ul>
       {data.allContentfulTopic.edges.map(({ node: t }) => (
-        <li key={t.id}>{t.title}</li>
+        <li key={t.id}>
+          <Link to={`/topic/${t.id}`}>{t.title}</Link>
+        </li>
       ))}
     </ul>
     <h3>Create Topic</h3>
